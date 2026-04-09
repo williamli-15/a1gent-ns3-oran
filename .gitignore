@@ -1,0 +1,37 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local secrets
+.env
+*.env
+
+# Local-only material
+local/
+
+# Runtime outputs
+*.log
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.tr
+commands.json
+oran-repository.db
+
+# Build trees
+build/
+cmake-cache/
+cmake-build*/
+
+# Local ns-3 workspaces created by helper scripts
+workspace/
+
+# Experiment outputs
+experiments/outputs/*
+!experiments/outputs/.gitkeep
