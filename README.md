@@ -1,4 +1,4 @@
-# a1gent-ns3-oran
+# A1gent-ns3-oran
 
 A1gent on NIST ns-3 O-RAN: deterministic and auditable intent-driven radio control.
 
