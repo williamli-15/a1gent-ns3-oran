@@ -3,20 +3,26 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
-source "${SCRIPT_DIR}/common.sh"
 
 NS3_DIR="${1:-${REPO_ROOT}/workspace/ns-3.42}"
 
-print_section "Build ns-3"
-print_kv "ns-3 directory" "${NS3_DIR}"
+echo
+echo "================================================================================"
+echo "Build ns-3"
+echo "================================================================================"
+echo "ns-3 directory: ${NS3_DIR}"
 
 if [[ ! -x "${NS3_DIR}/ns3" ]]; then
-  die "ns-3 launcher not found at ${NS3_DIR}/ns3"
+  echo "Error: ns-3 launcher not found at ${NS3_DIR}/ns3" >&2
+  exit 1
 fi
 
 cd "${NS3_DIR}"
-print_step "Configure"
+echo
+echo "Configuring ns-3..."
 ./ns3 configure --enable-examples --enable-tests
-print_step "Build"
+echo
+echo "Building ns-3..."
 ./ns3 build
-print_info "ns-3 build completed."
+echo
+echo "ns-3 build completed."

@@ -18,15 +18,27 @@ pip install -r a1gent/requirements.txt
 ./scripts/bootstrap.sh
 ```
 
-Default workspace target: `ns-3.42`.
+Default workspace target: `workspace/ns-3.42`.
 
-3. Run the ns-3 scenario:
+3. Create runtime env files:
+
+```bash
+cp experiments/configs/ns3-scenario.env.example experiments/configs/ns3-scenario.env
+cp experiments/configs/orchestrator.env.example experiments/configs/orchestrator.env
+```
+
+`ns3-scenario.env` controls the ns-3 scenario.
+`orchestrator.env` controls A1gent runtime and policy guardrails.
+
+4. Set `OPENROUTER_API_KEY` in `experiments/configs/orchestrator.env`.
+
+5. Run the ns-3 scenario:
 
 ```bash
 ./scripts/run_ns3_scenario.sh
 ```
 
-4. Run the orchestrator in a second terminal:
+6. Run the orchestrator in a second terminal:
 
 ```bash
 ./scripts/run_orchestrator.sh

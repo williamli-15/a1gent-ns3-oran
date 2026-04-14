@@ -1,6 +1,6 @@
-# ns-3 integration in `a1gent-ns3-oran`
+# ns-3 O-RAN integration in `a1gent-ns3-oran`
 
-ns-3-side sources for `a1gent-ns3-oran`.
+ns-3 O-RAN sources for `a1gent-ns3-oran`.
 
 ## Upstream basis
 
@@ -81,3 +81,4 @@ The current `src/lte/` overlay consists of:
 - `src/lte/model/cio-store.cc`
 
 These files add per-neighbor Cell Individual Offset (CIO) support to LTE UE measurement and event triggering.
+The overlay is based on `ns-3.42`.
